@@ -1,0 +1,50 @@
+@charset "utf-8";
+
+section.container{
+    width: 156px;
+    height: 24px;
+    overflow: hidden;
+}
+
+div.text-box{
+    width: 156px;
+    height: 288px;
+}
+
+div.text-box div.text{
+    width: 156px;
+    height: 24px;
+}
+
+.part1{
+    display: inline-block;
+    font-size: 16px;
+    line-height: 20px;
+    font-style: normal;
+    font-weight: 700;
+    color: rgb(47, 52, 56);
+    text-align: center;
+    margin-right: 2px;
+    min-width: 20px;
+}
+
+.part2{
+    margin-right: 6px;
+    display: flex;
+    align-items: center;
+    color: rgb(240, 86, 86);
+}
+
+.part3{
+    display: inline-block;
+    font-size: 16px;
+    line-height: 20px;
+    flex: 1 0 auto;
+    font-style: normal;
+    font-weight: 400;
+    color: rgb(47, 52, 56);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 104px;
+}

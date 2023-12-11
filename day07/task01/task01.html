@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="task01.css" rel="stylesheet" />
+    <title>요금표</title>
+  </head>
+  <body>
+    <table border="1">
+      <caption>
+        요금표
+      </caption>
+      <tr>
+        <td class="title">구분</td>
+        <td class="title">요금</td>
+      </tr>
+      <tr class="box">
+        <td class="star">아동</td>
+        <td>무료</td>
+      </tr>
+      <tr class="box">
+        <td class="star">청소년</td>
+        <td>2000원</td>
+      </tr>
+      <tr class="box">
+        <td class="star">성인</td>
+        <td>5000원</td>
+      </tr>
+    </table>
+    <fieldset>
+      <legend>구분</legend>
+      <input type="text" name="people" />
+      <input type="button" value="확인" onclick="send()" />
+    </fieldset>
+  </body>
+  <script src="task01.js"></script>
+</html>

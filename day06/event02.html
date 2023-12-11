@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>클릭 이벤트 - 실습</title>
+    <style>
+      #square-container {
+        margin: 0 auto;
+        width: 500px;
+        display: flex;
+        justify-content: space-between;
+      }
+      div.square {
+        width: 150px;
+        height: 150px;
+        border: 0.5px solid #e0e0e0;
+        text-align: center;
+        line-height: 150px;
+        font-size: 5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <input type="text" name="name" placeholder="이름" />
+      <input type="button" value="등록" onclick="send()" />
+      <input type="button" value="초기화" onclick="removeDiv()" />
+    </div>
+    <div id="square-container">
+      <div class="square"></div>
+      <!-- divAr[0] -->
+      <div class="square"></div>
+      <!-- divAr[1] -->
+      <div class="square"></div>
+      <!-- divAr[2] -->
+    </div>
+  </body>
+  <script>
+    // 이름을 입력하고 등록버튼을 클릭한다.
+    // 각 사각형을 클릭하면 순서대로 성, 이름이 나오게된다.
+    // 입력 예) 한동석
+    // 출력 예) 한    동    석
+    // 이름이 두 글자라면, 마지막 사각형에는 ♥를 출력한다.
+    // 입력 예) 이찬
+    // 출력 예) 이    찬    ♥
+
+    // 내풀이
+    let result = new Array(3);
+    const divAr = document.querySelectorAll('.square');
+
+    function send() {
+      if (!(divAr[0].onclick == null)) {
+        alert('초기화버튼을 눌러주세요');
+        return;
+      }
+      const name = document.getElementsByName('name');
+      if (name[0].value.length == 3) {
+        result = name[0].value.split('');
+      } else if (name[0].value.length == 2) {
+        result = (name[0].value + '♥').split('');
+      } else {
+        alert('다시입력해주세요');
+        return;
+      }
+      show();
+    }
+
+    function show() {
+      for (let i = 0; i < 3; i++) {
+        divAr[i].style.backgroundColor = 'yellow';
+        divAr[i].onclick = function () {
+          if (divAr[i].innerHTML == '') {
+            divAr[i].innerHTML = result[i];
+          } else {
+            divAr[i].innerHTML = '';
+          }
+        };
+      }
+    }
+
+    function removeDiv() {
+      for (let i = 0; i < 3; i++) {
+        divAr[i].style.backgroundColor = 'white';
+        divAr[i].innerHTML = '';
+        divAr[i].onclick = null;
+      }
+    }
+  </script>
+</html>

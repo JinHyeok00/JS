@@ -1,0 +1,94 @@
+@charset "utf-8";
+
+body {
+  min-width: 269px;
+}
+
+section.container {
+  position: relative;
+  width: 269px;
+  height: 508px;
+  margin-left: 20px;
+  overflow: hidden; /* 넘치는건 옆으로 넘기고 숨기기 */
+  border-radius: 4px;
+}
+
+section.arrow-container {
+  margin-left: 20px;
+  width: 269px;
+  height: 100px;
+  position: relative;
+}
+
+div.banner {
+  width: 2959px;
+  height: 508px;
+  transform: translate(-269px); /* 옆으로 한칸 이동시키기 */
+}
+
+div.banner div {
+  width: 269px;
+  height: 508px;
+  background-size: 100%; /* 사진을 화면 전체에 채우고 */
+  background-repeat: no-repeat; /* 만약 사진 크기가 더 작더라도 반복하지 않음 */
+  float: left; /* div는 블록요소라 float로 옆으로 모으기 */
+}
+
+div.arrow {
+  cursor: pointer;
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  background-color: white;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 2rem;
+  display: none;
+}
+
+div.prev {
+  left: -24px;
+  bottom: 350%;
+  transform: translateY(50%);
+}
+
+div.next {
+  right: -24px;
+  bottom: 350%;
+  transform: translateY(50%);
+}
+
+span.number-box {
+  font-size: 14px;
+  height: 26px;
+  border-radius: 13px;
+  background-color: rgba(33, 38, 41, 0.5);
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  line-height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  color: #ffffff;
+  box-sizing: border-box;
+  padding: 4px 8px 4px 10px;
+  cursor: pointer;
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+}
+
+span.number-part {
+  vertical-align: middle;
+  margin-right: 2px;
+}
+
+span.plus-part {
+  display: inline-block;
+  font-size: 12px;
+  line-height: 1;
+  vertical-align: middle;
+}
